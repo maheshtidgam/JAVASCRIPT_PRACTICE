@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear-Gradient</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            width: 100vw;
+             /* Center vertically */
+             background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+           
+
+        }
+
+        .Mybutton{
+            
+            padding: 5px 20px 5px 20px;
+            border-radius: 10px;
+        }
+
+        #btn1{
+            background-color: #004d7a;
+        }
+        #btn2{
+            background-color: #a8eb12;
+        }
+
+
+        .Butons{
+            margin: auto;
+         
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+          
+        }
+
+        #container {
+           
+            height: 300px;
+           
+        
+        }
+
+        p{
+            text-align: center;
+        }
+
+
+        .GRADIENT{
+          width: 400px;
+          margin: auto;
+          text-align: center;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div class="Butons"> 
+            <button id="btn1" class="Mybutton">#83n3gs</button>
+            <button id="btn2" class="Mybutton">#83n3gs</button>
+        </div>
+       
+        <p>Copy your code Here</p>
+
+        <div  class="GRADIENT">
+            <p>background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);</p>
+        </div>
+    </div> 
+</body>
+
+
+<script>
+
+    let bt1=document.getElementById("btn1")
+    let bt2=document.getElementById("btn2")
+    let copyDiv=document.querySelector(".GRADIENT")
+
+   var rgb1="#398d95"
+   var rgb2="#398d95"
+
+
+    const hexValues=()=>{
+        let HexVal='0123456789abcdef'
+         let colours="#"
+        for (let i=0;i<6;i++)
+    {
+        // console.log(HexVal[Math.floor(Math.random()*16)])
+        colours=colours+HexVal[Math.floor(Math.random()*16)]
+        
+    }
+
+    // console.log(colours)
+    return colours
+
+    }
+
+
+    const handleBtn1=()=>{
+
+        bt1.innerText=rgb1
+         rgb1=hexValues()
+        console.log(rgb1)
+
+        document.body.style.backgroundImage= `linear-gradient(to right top, ${rgb1}, ${rgb2})`;
+        copyDiv.innerHTML= `background-image: linear-gradient(to right top, ${rgb1},${rgb2})`;
+    }
+
+    const handleBtn2=()=>{
+        bt2.innerText=rgb2
+
+        rgb2=hexValues();
+        console.log(rgb2);
+
+        document.body.style.backgroundImage= `linear-gradient(to right top, ${rgb1}, ${rgb2})`;
+        copyDiv.innerHTML= `background-image: linear-gradient(to right top, ${rgb1},${rgb2})`;
+
+
+
+}
+
+
+
+const CopyCode=()=>{
+    navigator.clipboard.writeText(copyDiv.innerText);
+
+    // Alert the copied text
+    alert("Copied the text: " + copyDiv.innerText);
+
+}
+
+ 
+
+
+
+
+
+
+
+    bt1.addEventListener('click',handleBtn1)
+    bt2.addEventListener('click',handleBtn2)
+    copyDiv.addEventListener('click',CopyCode)
+
+
+
+</script>
+</html>
