@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <style>
+        #container {
+          width: 300px;
+          margin: 50px auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          text-align: center;
+        }
+        input {
+          display: block;
+          width: 90%;
+          padding: 10px;
+          margin: 10px auto;
+          font-size: 1em;
+        }
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+        }
+        .submit_btn, .reload_btn {
+          padding: 8px 16px;
+          font-size: 1em;
+        }
+        #messages h3, #messages p {
+          color: #333;
+        }
+        </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    const App = () => {
+      return (
+        <>
+          <Bmi_calculator />
+        </>
+      );
+    };
+
+    const Bmi_calculator = () => {
+      const [weight, setWeight] = React.useState(0);
+      const [height, setHeight] = React.useState(0);
+      const [bmi, setBmi] = React.useState("");
+      const [message, setMessage] = React.useState("");
+
+      const calcBMI = (e) => {
+        e.preventDefault();
+        if (weight === 0 || height === 0) {
+          alert("Enter A valid input values");
+        } else {
+          let BMI = (weight / (height * height))*703;
+          setBmi(BMI.toFixed(1));
+          console.log(bmi);
+
+          if (BMI < 25) {
+            setMessage("Your are underweight");
+          } else if (BMI > 25 && BMI < 30) {
+            setMessage("You are healthy");
+          } else {
+            setMessage("Your are over weight");
+          }
+        }
+      };
+
+      return (
+        <>
+          <div id="container">
+            <h2>BMI Calculator</h2>
+            <form onSubmit={calcBMI}>
+              <input
+                type="number"
+                id="wgt"
+                placeholder="Enter Weight Here"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              />
+
+              <input
+                type="text"
+                id="height"
+                placeholder="Enter height Here"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+              />
+
+              <div className="buttons">
+                <button className="submit_btn" type="submit">
+                  Submit
+                </button>
+
+                <button className="reload_btn" type="">
+                  Reload
+                </button>
+              </div>
+              <div id="messages">
+                <h3>Your BMI count is :{bmi}</h3>
+                <p>{message}</p>
+              </div>
+            </form>
+          </div>
+        </>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+         nav {
+        background-color: gray;
+        text-align: center;
+      }
+      nav a {
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        margin: 10px;
+        padding: 5px 10px;
+      }
+      #cards-container {
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: repeat(auto-fill, 300px);
+        gap: 30px;
+      }
+
+      #cards-container > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      button {
+        padding: 5px 20px;
+        margin-left: 20px;
+        background-color:rgb(44, 165, 226);
+        border-radius: 5px;
+      }
+      button:hover{
+        background-color: red;
+      }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../LocalstorageD5/Question1.html">Home</a>
+      </nav>
+      <section id="cards-container"></section>
+</body>
+</html>
+
+<script>
+
+
+    let deleteData=(index)=>{
+        let CardData = JSON.parse(localStorage.getItem("cartData"));
+        CardData.splice(index,1);
+        localStorage.setItem("cartData", JSON.stringify(CardData));
+        displayData();
+
+    }
+
+
+    const displayData = () => {
+    let Container = document.getElementById("cards-container");
+    Container.innerHTML = "";
+    let CardData = JSON.parse(localStorage.getItem("cartData")) || [];
+    CardData.forEach((data, index) => {
+      Div = document.createElement("div");
+      Div.className = "cards";
+      cardText = `<h3>${data.name}</h3>
+        <h3>${data.username}</h3>
+        <h3>${data.email}</h3>`;
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.className = "deleteBtn";
+      Div.innerHTML = cardText;
+      Div.append(deleteBtn);
+      Container.append(Div);
+     deleteBtn.addEventListener("click", () => {
+        deleteData(index);
+      });
+    });
+  };
+
+  displayData();
+</script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #585454;
+            color: white;
+            text-align: center;
+            
+            
+            height: 250px;
+            width: 100vw;
+        }
+        #container{
+            margin: auto;
+            margin-top: 20%;
+            border: 1px solid white;
+            width: 500px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+           
+           
+        }
+        #timer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            gap: 10px;
+            
+        }
+        .time{
+            
+            border: 1px solid white;
+            padding: 30px;
+            border-radius: 10px;
+           
+        }
+
+        #buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width:500px ;
+            margin: auto;
+
+        }
+
+      button{
+        padding: 10px 30px;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div class="timer" id="timer">
+            <span class="time" id="hr">00</span>
+            <span class="text">Hr</span>
+            <span class="time" id="min">00</span>
+            <span class="text">Min</span>
+            <span class="time" id="sec">00</span>
+            <span class="text" >Sec</span>
+        </div>
+       
+    </div>
+    <div id="buttons">
+        <button class="start" onclick="start()">Start</button>
+        <button class="stop" onclick="stop()">Stop</button>
+        <button class="reset">reset</button>
+    </div>
+</body>
+</html>
+
+<script>
+    let hours=document.getElementById("hr")
+    let mins=document.getElementById("min")
+    let seconds=document.getElementById("sec")
+    let HR=0;
+    let MIN=0;
+    let SEC=0;
+    let interval;
+    let Timer=false
+
+    function start(){
+
+        console.log("button click start")
+        interval=setInterval("stopWatch()", 1000)
+
+
+    }
+
+    function stop(){
+        console.log("button click start")
+        clearInterval(interval)
+
+    }
+
+    function reset(){
+
+    }
+
+    const stopWatch=()=>{
+    
+            // SEC+=1
+            // console.log(SEC)
+            // SEC=SEC==60?0:SEC;
+
+            // div1=Math.floor(SEC/60);
+            // MIN=div1%60;
+
+            
+
+            // div2=Math.floor(SEC/360);
+            // HR=div2%24;
+            SEC+=1;
+            MIN=SEC==60?MIN+=1:MIN;
+            SEC=SEC==60?SEC=0:SEC;
+            
+            HR=MIN==60?HR+=1:HR;
+
+
+
+            seconds.innerHTML=SEC;
+            mins.innerHTML=MIN
+            hours.innerHTML=HR;
+    
+    }
+
+    
+</script>
