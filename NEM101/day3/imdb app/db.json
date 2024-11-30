@@ -1,0 +1,143 @@
+[
+    {
+      "id": 1,
+      "title": "Deadpool",
+      "rating": 5,
+      "genre": "Action",
+      "description": "A fast-talking mercenary with a morbid sense of humor fights bad guys while breaking the fourth wall."
+    },
+    {
+      "id": 2,
+      "title": "Deadpool 2",
+      "rating": 5,
+      "genre": "Action",
+      "description": "Foul-mouthed mutant mercenary Wade Wilson teams up with other mutants to protect a young boy."
+    },
+    {
+      "id": 3,
+      "title": "The Shawshank Redemption",
+      "rating": 5,
+      "genre": "Drama",
+      "description": "Two imprisoned men bond over several years, finding solace and eventual redemption through acts of common decency."
+    },
+    {
+      "id": 4,
+      "title": "Inception",
+      "rating": 5,
+      "genre": "Sci-Fi",
+      "description": "A thief who enters the dreams of others is tasked with planting an idea in someone's subconscious."
+    },
+    {
+      "id": 5,
+      "title": "The Dark Knight",
+      "rating": 5,
+      "genre": "Action",
+      "description": "Batman faces his toughest challenge yet: the anarchist Joker wreaks havoc in Gotham City."
+    },
+    {
+      "id": 6,
+      "title": "Forrest Gump",
+      "rating": 5,
+      "genre": "Drama",
+      "description": "The life journey of a man with low intelligence who achieves incredible things by chance."
+    },
+    {
+      "id": 7,
+      "title": "Pulp Fiction",
+      "rating": 5,
+      "genre": "Crime",
+      "description": "The intertwined lives of hitmen, a boxer, and mobsters unfold in a series of darkly comedic stories."
+    },
+    {
+      "id": 8,
+      "title": "The Matrix",
+      "rating": 5,
+      "genre": "Sci-Fi",
+      "description": "A computer hacker discovers the true nature of reality and joins a rebellion against machines."
+    },
+    {
+      "id": 9,
+      "title": "Avengers: Endgame",
+      "rating": 5,
+      "genre": "Action",
+      "description": "The Avengers assemble one last time to reverse the damage caused by Thanos' snap."
+    },
+    {
+      "id": 10,
+      "title": "Gladiator",
+      "rating": 5,
+      "genre": "Action",
+      "description": "A betrayed Roman general seeks revenge against the corrupt emperor who murdered his family."
+    },
+    {
+      "id": 11,
+      "title": "Interstellar",
+      "rating": 5,
+      "genre": "Sci-Fi",
+      "description": "A team of explorers travels through a wormhole in space to ensure humanity's survival."
+    },
+    {
+      "id": 12,
+      "title": "Titanic",
+      "rating": 5,
+      "genre": "Romance",
+      "description": "A love story unfolds on the ill-fated Titanic as it heads toward disaster."
+    },
+    {
+      "id": 13,
+      "title": "The Lion King",
+      "rating": 5,
+      "genre": "Animation",
+      "description": "A young lion prince learns about life, loss, and leadership as he reclaims his kingdom."
+    },
+    {
+      "id": 14,
+      "title": "The Godfather",
+      "rating": 5,
+      "genre": "Crime",
+      "description": "The story of the powerful Corleone mafia family and their rise to power."
+    },
+    {
+      "id": 15,
+      "title": "Fight Club",
+      "rating": 5,
+      "genre": "Drama",
+      "description": "A disillusioned man forms an underground fight club as a way of reclaiming his life."
+    },
+    {
+      "id": 16,
+      "title": "Star Wars: A New Hope",
+      "rating": 5,
+      "genre": "Sci-Fi",
+      "description": "A young farmer becomes a hero in a galaxy-wide rebellion against an evil empire."
+    },
+    {
+      "id": 17,
+      "title": "Jurassic Park",
+      "rating": 5,
+      "genre": "Adventure",
+      "description": "Scientists create a theme park with living dinosaurs, which inevitably goes terribly wrong."
+    },
+    {
+      "id": 18,
+      "title": "The Avengers",
+      "rating": 5,
+      "genre": "Action",
+      "description": "Earth's mightiest heroes come together to stop an alien invasion."
+    },
+    {
+      "id": 19,
+      "title": "Coco",
+      "rating": 5,
+      "genre": "Animation",
+      "description": "A boy accidentally enters the Land of the Dead and discovers his family's musical legacy."
+    },
+    {
+      "id": 20,
+      "title": "The Wolf of Wall Street",
+      "rating": 5,
+      "genre": "Biography",
+      "description": "The rise and fall of a wealthy stockbroker living a life of excess and corruption."
+    }
+  ]
+  

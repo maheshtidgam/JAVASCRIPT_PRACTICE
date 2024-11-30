@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Day3 IMDB</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 2px;
+        max-width: 300px;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>WELCOME TO MOVIE APP</p>
+    <form action="" >
+      <input type="text" id="title" placeholder="Enter The Title" />
+      <input type="text" id="rating" placeholder="Enter the rating" />
+      <input type="text" id="genre" placeholder="Enter The genre" />
+      <input type="text" id="year" placeholder="enter the year" />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
+<script>
+  document.querySelector("form").addEventListener("submit", createMovie);
+
+  function createMovie(event) {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const rating = document.getElementById("rating").value;
+    const genre = document.getElementById("genre").value;
+    const year = document.getElementById("year").value;
+
+    const movie = {
+    title,
+    rating,
+    genre,
+    year,
+  };
+  console.log(movie)
+
+  fetch("/movies", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(movie),
+  })
+    .then((r) => r.text())
+    .then(console.log );  
+  }
+
+
+
+ 
+</script>
